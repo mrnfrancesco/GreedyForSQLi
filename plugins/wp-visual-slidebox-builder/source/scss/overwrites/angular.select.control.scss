@@ -1,0 +1,29 @@
+@import "../variables";
+@import "../mixins";
+
+.vsbb-controlls-container,.vsbb-grid-editor-container {
+  .wrap-dd-select {
+    color: #000000;
+    @include box-shadow(0,0,0,0);
+    @include border-radius(2px);
+    padding: 3px 0 4px 10px;
+    font-size: 11px;
+    box-sizing: border-box;
+    margin-top: 1px;
+    min-height: 22px;
+    &:after {
+      border-color: #000000 transparent;
+      right: 5px;
+    }
+    .dropdown {
+      margin-top: 2px;
+      @include border-radius(2px);
+      li {
+        margin-bottom: 0;
+        a {
+          color: #000000;
+        }
+      }
+    }
+  }
+}

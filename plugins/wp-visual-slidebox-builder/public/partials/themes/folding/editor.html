@@ -1,0 +1,238 @@
+<!--<div class="vsbb-theme-section">-->
+    <!--<p>Positioning Settings</p>-->
+<!--</div>-->
+<!--<div class="vsbb-grid__col vsbb-grid__col&#45;&#45;12-of-12">-->
+    <!--<div class="clearfix">-->
+        <!--<p class="vsbb-section-sub-title vsbb-m-t-small">Responsive</p>-->
+        <!--<span>Full Width</span>-->
+        <!--<input type="radio" name="vsbb-cta-position"-->
+               <!--ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col&#45;&#45;12-of-12">-->
+        <!--<span>1 of 2</span>-->
+        <!--<input type="radio" name="vsbb-cta-position"-->
+               <!--ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col&#45;&#45;1-of-2">-->
+        <!--<span>1 of 3</span>-->
+        <!--<input type="radio" name="vsbb-cta-position"-->
+               <!--ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col&#45;&#45;1-of-3">-->
+        <!--<span>1 of 4</span>-->
+        <!--<input type="radio" name="vsbb-cta-position"-->
+               <!--ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col&#45;&#45;1-of-4">-->
+        <!--<span>1 of 5</span>-->
+        <!--<input type="radio" name="vsbb-cta-position"-->
+               <!--ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col&#45;&#45;1-of-5">-->
+        <!--<span>1 of 6</span>-->
+        <!--<input type="radio" name="vsbb-cta-position"-->
+               <!--ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col&#45;&#45;1-of-6">-->
+
+    <!--</div>-->
+    <!--<div class="clearfix">-->
+        <!--<p class="vsbb-section-sub-title vsbb-m-t-small">Gutters</p>-->
+        <!--<switch ng-model="editorCtrl.saveObject.positioning.gutters"-->
+                <!--class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="vsbb-theme-section">
+    <p>General Settings</p>
+</div>
+<div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title">Dimensions
+            <small>(Width & Height)</small>
+        </p>
+        <input class="vsbb-med-input l vsbb-p-l" type="text" ng-model="editorCtrl.saveObject.folded.styles.width">
+
+        <input class="vsbb-med-input l vsbb-p-l" type="text" ng-model="editorCtrl.saveObject.folded.styles.height">
+    </div>
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title">Miscellaneous</p>
+        <p class="vsbb-control-label vsbb-p-l">
+            Centered:
+        </p>
+        <switch ng-model="editorCtrl.saveObject.centered" class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>
+    </div>
+    <div class="clearfix">
+        <p class="vsbb-control-label vsbb-p-l">
+            Overlays:
+        </p>
+        <switch ng-model="editorCtrl.saveObject.overlays" class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>
+    </div>
+    <div class="clearfix">
+        <p class="vsbb-control-label vsbb-p-l">
+            Speed:
+        </p>
+        <input class="vsbb-med-input vsbb-m-l-small vsbb-p-l" ng-model="editorCtrl.saveObject.speed" type="number">
+    </div>
+    <div class="clearfix">
+        <p class="vsbb-control-label vsbb-p-l">
+            Depth:
+        </p>
+        <input class="vsbb-med-input vsbb-m-l-small vsbb-p-l" ng-model="editorCtrl.saveObject.depth" type="number">
+    </div>
+</div>
+<div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title">Folds Count</p>
+        <div class="vsbb-med-select" dropdown-select="editorCtrl.foldCounts"
+             dropdown-model="editorCtrl.saveObject.folds"
+             dropdown-item-label="name">
+        </div>
+    </div>
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title">Direction</p>
+        <div class="vsbb-med-select" dropdown-select="editorCtrl.foldDirections"
+             dropdown-model="editorCtrl.saveObject.foldDirections"
+             dropdown-item-label="name">
+        </div>
+    </div>
+</div>
+
+<div class="vsbb-theme-section">
+    <p>Folded State Settings</p>
+</div>
+<div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title">Background</p>
+        <p class="vsbb-control-label vsbb-p-l">
+            Color:
+        </p>
+        <color-picker class="vsbb-p-l"
+                      ng-model="editorCtrl.foldedBackgroundColor"
+                      event-api="editorCtrl.foldedBackGroundColorApi"
+                      options="ctrl.colorPickerOptions"
+        ></color-picker>
+    </div>
+    <div class="clearfix">
+        <a href="" class="button button-primary vsbb-small-btn"
+           ng-click="editorCtrl.setBackgroundImage($event, 'open')">Use Image</a>
+        <a href="" class="vsbb-m-l-xsmall button vsbb-small-btn"
+           ng-click="editorCtrl.removeBackgroundImage($event, 'open')">Remove Image</a>
+    </div>
+</div>
+
+<div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title">Trigger</p>
+        <p class="vsbb-control-label vsbb-p-l">
+            Trigger Position:
+        </p>
+        <div class="vsbb-trigger-control vsbb-p-l">
+            <div>
+                <input name="vsbb-open-trigger-style" ng-change="editorCtrl.triggerStyleChanged('open', 0)"
+                       ng-model="editorCtrl.saveObject.triggers.open.styleValue" value="0" type="radio">
+                <input name="vsbb-open-trigger-style" ng-change="editorCtrl.triggerStyleChanged('open', 1)"
+                       ng-model="editorCtrl.saveObject.triggers.open.styleValue" value="1" type="radio">
+            </div>
+            <div>
+                <input name="vsbb-open-trigger-style" ng-change="editorCtrl.triggerStyleChanged('open', 2)"
+                       ng-model="editorCtrl.saveObject.triggers.open.styleValue" value="2" type="radio">
+                <input name="vsbb-open-trigger-style" ng-change="editorCtrl.triggerStyleChanged('open', 3)"
+                       ng-model="editorCtrl.saveObject.triggers.open.styleValue" value="3" type="radio">
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <p class="vsbb-control-label vsbb-p-l">
+            Trigger Icon:
+        </p>
+        <div>
+            <button ng-model="editorCtrl.saveObject.triggers.open.styleClass"
+                    class="button vsbb-r-l-xsmall vsbb-small-btn " vsbb-font-picker><i class="fa fa-align-left"
+                                                                                       ng-class="editorCtrl.saveObject.triggers.open.styleClass"></i>
+                Icon
+            </button>
+        </div>
+        <input class="vsbb-xsmall-input l vsbb-p-l" type="text"
+               ng-model="editorCtrl.saveObject.triggers.open.styles['font-size']">
+        <color-picker name="triggers.open.styles.color" class="vsbb-p-l vsbb-m-l-xsmall vsbb-color-no-input"
+                      ng-model="editorCtrl.saveObject.triggers.open.colorRaw"
+                      event-api="editorCtrl.colorApi"
+                      options="ctrl.colorPickerOptions"
+        ></color-picker>
+    </div>
+</div>
+<div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title">Content
+            <small>(WYSIWYG)</small>
+        </p>
+        <text-angular ta-default-wrap="span" ta-maxlength="40" ta-toolbar-class="clearfix vsbb-editor-toolbar"
+                      ta-toolbar-group-class="vsbb-btn-group"
+                      ta-toolbar="[['backgroundColor', 'h1','h2','h3','p','quote'],['bold','italics','underline','strikeThrough'], ['justifyLeft','justifyCenter','justifyRight','indent','outdent'],['insertLink','undo','redo','clear']]"
+                      ng-model="editorCtrl.saveObject.preContent"></text-angular>
+    </div>
+</div>
+
+<div class="vsbb-theme-section">
+    <p>Unfolded State Settings</p>
+</div>
+<div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title">Background</p>
+        <p class="vsbb-control-label vsbb-p-l">
+            Color:
+        </p>
+        <color-picker class="vsbb-p-l"
+                      ng-model="editorCtrl.unfoldedBackgroundColor"
+                      event-api="editorCtrl.unfoldedBackGroundColorApi"
+                      options="ctrl.colorPickerOptions"
+        ></color-picker>
+    </div>
+    <div class="clearfix">
+        <a href="" class="button button-primary  vsbb-small-btn"
+           ng-click="editorCtrl.setBackgroundImage($event, 'close')">Use Image</a>
+        <a href="" class="vsbb-m-l-xsmall  button vsbb-small-btn"
+           ng-click="editorCtrl.removeBackgroundImage($event, 'close')">Remove Image</a>
+    </div>
+</div>
+<div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title">Trigger</p>
+        <p class="vsbb-control-label vsbb-p-l">
+            Trigger Position:
+        </p>
+        <div class="vsbb-trigger-control vsbb-p-l">
+            <div>
+                <input name="vsbb-close-trigger-style" ng-change="editorCtrl.triggerStyleChanged('close', 0)"
+                       ng-model="editorCtrl.saveObject.triggers.close.styleValue" value="0" type="radio">
+                <input name="vsbb-close-trigger-style" ng-change="editorCtrl.triggerStyleChanged('close', 1)"
+                       ng-model="editorCtrl.saveObject.triggers.close.styleValue" value="1" type="radio">
+            </div>
+            <div>
+                <input name="vsbb-close-trigger-style" ng-change="editorCtrl.triggerStyleChanged('close', 2)"
+                       ng-model="editorCtrl.saveObject.triggers.close.styleValue" value="2" type="radio">
+                <input name="vsbb-close-trigger-style" ng-change="editorCtrl.triggerStyleChanged('close', 3)"
+                       ng-model="editorCtrl.saveObject.triggers.close.styleValue" value="3" type="radio">
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <p class="vsbb-control-label vsbb-p-l">
+            Trigger Icon:
+        </p>
+        <div>
+            <button ng-model="editorCtrl.saveObject.triggers.close.styleClass"
+                    class="button vsbb-m-r-xsmall vsbb-small-btn " vsbb-font-picker><i class="fa fa-align-left"
+                                                                                       ng-class="editorCtrl.saveObject.triggers.close.styleClass"></i>
+                Icon
+            </button>
+        </div>
+        <input class="vsbb-xsmall-input l vsbb-p-l" type="text"
+               ng-model="editorCtrl.saveObject.triggers.close.styles['font-size']">
+        <color-picker name="triggers.close.styles.color" class="vsbb-p-l vsbb-m-l-xsmall vsbb-color-no-input"
+                      ng-model="editorCtrl.saveObject.triggers.close.colorRaw"
+                      event-api="editorCtrl.colorApi"
+                      options="ctrl.colorPickerOptions"
+        ></color-picker>
+    </div>
+</div>
+<div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title">Main Content
+            <small>(WYSIWYG)</small>
+        </p>
+        <text-angular ta-default-wrap="span" ta-toolbar-class="clearfix vsbb-editor-toolbar"
+                      ta-toolbar-group-class="vsbb-btn-group"
+                      ta-toolbar="[['backgroundColor','h1','h2','h3','p','quote'],['bold','italics','underline','strikeThrough','ul','ol'], ['justifyLeft','justifyCenter','justifyRight','indent','outdent'],['insertLink','undo','redo','clear']]"
+                      ng-model="editorCtrl.saveObject.mainText"></text-angular>
+
+    </div>
+</div>

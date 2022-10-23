@@ -1,0 +1,21 @@
+<div class="vsbb-theme-section">
+    <p>General Settings</p>
+</div>
+<div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title">Grid Size</p>
+        <div class="vsbb-xsmall-select vsbb-p-l" dropdown-select="editorCtrl.gridSizes"
+             dropdown-model="editorCtrl.saveObject.size.h"
+             dropdown-item-label="name">
+        </div>
+        <div class="vsbb-xsmall-select vsbb-p-l" dropdown-select="editorCtrl.gridSizes"
+             dropdown-model="editorCtrl.saveObject.size.v"
+             dropdown-item-label="name">
+        </div>
+    </div>
+    <div class="clearfix">
+        <p class="vsbb-section-sub-title vsbb-m-t-small">Gutters</p>
+        <switch ng-model="editorCtrl.saveObject.gutters"
+                class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>
+    </div>
+</div>

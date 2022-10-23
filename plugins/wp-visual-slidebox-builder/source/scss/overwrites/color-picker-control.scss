@@ -1,0 +1,48 @@
+@import "../variables";
+@import "../mixins";
+
+.vsbb-controlls-container {
+  color-picker {
+    &.vsbb-color-no-input {
+      .color-picker-swatch{
+        background-color: rgb(255, 255, 255);
+        //height: 13px;
+        margin: 1px 0;
+        display: block;
+      }
+      .color-picker-input {
+        display: none;
+      }
+    }
+    .color-picker-swatch{
+      border: 1px solid $grey!important;
+      padding: 0px 12px!important;
+      margin: 1px 0px;
+      float: left;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1;
+      color: #555;
+      display: inline-block;
+      height: 25px;
+    }
+    &.vsbb-l-color-input{
+      .color-picker-wrapper {
+        .input-group {
+          .color-picker-input {
+            width: 105px;
+          }
+        }
+      }
+    }
+    .color-picker-wrapper {
+      .input-group {
+        .color-picker-input {
+          height: 27px;
+          font-size: 11px;
+          width: 69px;
+        }
+      }
+    }
+  }
+}

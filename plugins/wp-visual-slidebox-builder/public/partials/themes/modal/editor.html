@@ -1,0 +1,84 @@
+<div id="vsbb-theme-modal" class="clearfix vsbb-editor-section-div">
+
+
+    <!-- CONTENT SETTINGS -->
+    <div class="vsbb-theme-section">
+        <p>Content Settings</p>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title vsbb-m-t-small">Iframe</p>
+            <switch ng-model="editorCtrl.saveObject.modalSettings.data.iframe"
+                    class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"
+                    ng-change="editorCtrl.iframeSettingsChanged()"></switch>
+        </div>
+        <div class="clearfix" ng-show="editorCtrl.saveObject.modalSettings.data.iframe">
+            <p>Trigger Text</p>
+            <input type="text" ng-model="editorCtrl.saveObject.modalSettings.triggerText"
+                   class="vsbb-flex-input">
+
+            <p>Iframe URL</p>
+            <input type="text" ng-model="editorCtrl.saveObject.modalSettings.data.iframeURL"
+                   class="vsbb-flex-input">
+        </div>
+        <br>
+    </div>
+    <div ng-show="!editorCtrl.saveObject.modalSettings.data.iframe">
+
+        <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+            <div class="clearfix">
+                <div class="clearfix vsbb-column-settings">
+                    <p>Trigger Text</p>
+                    <input type="text" ng-model="editorCtrl.saveObject.modalSettings.triggerText"
+                           class="vsbb-flex-input">
+                    <p>Heading</p>
+                    <input type="text" ng-model="editorCtrl.saveObject.modalSettings.data.heading"
+                           class="vsbb-flex-input">
+                    <p>Mean Text</p>
+                    <textarea type="text" ng-model="editorCtrl.saveObject.modalSettings.data.body.mainText"
+                              class="vsbb-flex-input"></textarea>
+                    <p>Sub Text</p>
+                    <textarea type="text" ng-model="editorCtrl.saveObject.modalSettings.data.body.subText"
+                              class="vsbb-flex-input"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLOR SETTINGS -->
+        <div class="vsbb-theme-section">
+            <p>Style Settings</p>
+        </div>
+        <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+            <div class="clearfix">
+                <div class="clearfix vsbb-column-settings">
+                    <p>Style Type</p>
+                    <div class="vsbb-flex-select vsbb-p-l" dropdown-select="editorCtrl.modalStyles"
+                         dropdown-model="editorCtrl.modalStyle"
+                         dropdown-item-label="name"
+                         dropdown-onchange="editorCtrl.modalStyleChanged(selected)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BUTTONS SETTINGS -->
+        <div class="vsbb-theme-section">
+            <p>Buttons Settings</p>
+        </div>
+        <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+            <div class="clearfix">
+                <div class="clearfix vsbb-column-settings">
+                    <p>Main Button</p>
+                    <input type="text" ng-model="editorCtrl.saveObject.modalSettings.data.footer.mainCtaText"
+                           class="vsbb-flex-input">
+                    <p>Main Button link (Optional)</p>
+                    <input type="text" ng-model="editorCtrl.saveObject.modalSettings.data.footer.mainCtaLink"
+                           class="vsbb-flex-input">
+                    <p>Cancel Button</p>
+                    <input type="text" ng-model="editorCtrl.saveObject.modalSettings.data.footer.subCtaText"
+                           class="vsbb-flex-input">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

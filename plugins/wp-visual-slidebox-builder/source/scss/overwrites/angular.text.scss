@@ -1,0 +1,144 @@
+@import "../variables";
+@import "../mixins";
+
+.vsbb-controlls-container {
+  text-angular {
+    .vsbb-editor-toolbar {
+      margin-bottom: 7px;
+    }
+    .vsbb-btn-group {
+      float: left;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    .ta-scroll-window {
+      &.form-control {
+        border: 1px solid $border-grey;
+        height: 100px;
+        min-height: 100px;
+        background-color: $light-grey;
+        font-weight: 300;
+        p, span, a {
+          font-size: 12px;
+        }
+
+        h1 {
+          font-size: 2em;
+          line-height: .7;
+        }
+        h2 {
+          font-size: 1.5em;
+          line-height: 1;
+        }
+        h3 {
+          font-size: .75em;
+          line-height: 1.5;
+        }
+        h1, h2, h3 {
+          p, span, a {
+            font-size: 100%;
+          }
+        }
+      }
+      & > .ta-bind {
+        min-height: 100px;
+      }
+    }
+    .sp-replacer {
+      margin: 0;
+      overflow: hidden;
+      cursor: pointer;
+      padding: 3px;
+      display: inline-block;
+      border: solid 1px #e6e6e6;
+      background: #fff;
+      color: #333;
+      vertical-align: middle;
+      border-radius: 3px;
+      box-sizing: content-box;
+      .sp-preview {
+        position: relative;
+        width: 10px;
+        height: 10px;
+        border: solid 1px #222;
+        margin-right: 5px;
+        float: left;
+        z-index: 0;
+      }
+      .sp-dd {
+        display: none;
+      }
+    }
+  }
+}
+.vsbb-text-angular-small {
+  text-angular {
+    .vsbb-editor-toolbar {
+      margin-bottom: 7px;
+    }
+    .vsbb-btn-group {
+      float: left;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    .ta-scroll-window {
+      &.form-control {
+        border: 1px solid $border-grey;
+        height: 40px;
+        min-height: 40px;
+        background-color: $light-grey;
+        font-weight: 300;
+        overflow: hidden;
+        p, span, a {
+          font-size: 12px;
+        }
+
+        h1 {
+          font-size: 2em;
+          line-height: .7;
+        }
+        h2 {
+          font-size: 1.5em;
+          line-height: 1;
+        }
+        h3 {
+          font-size: .75em;
+          line-height: 1.5;
+        }
+        h1, h2, h3 {
+          p, span, a {
+            font-size: 100%;
+          }
+        }
+      }
+      & > .ta-bind {
+        min-height: 40px;
+      }
+    }
+    .sp-replacer {
+      margin: 0;
+      overflow: hidden;
+      cursor: pointer;
+      padding: 3px;
+      display: inline-block;
+      border: solid 1px #e6e6e6;
+      background: #fff;
+      color: #333;
+      vertical-align: middle;
+      border-radius: 3px;
+      box-sizing: content-box;
+      .sp-preview {
+        position: relative;
+        width: 10px;
+        height: 10px;
+        border: solid 1px #222;
+        margin-right: 5px;
+        float: left;
+        z-index: 0;
+      }
+      .sp-dd {
+        display: none;
+      }
+    }
+  }
+}

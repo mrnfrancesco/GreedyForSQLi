@@ -1,0 +1,11 @@
+.wp-core-ui{
+  .vsbb-btn{
+    &.button-primary{
+      &.disabled{
+        box-shadow: 0 1px 0 #006799!important;
+      }
+    }
+  }
+
+}
+

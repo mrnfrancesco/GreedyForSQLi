@@ -1,0 +1,12 @@
+<div class="vsbb-dialog-content">
+    <div class="vsbb-dialog-heading">
+        <h1>{{ngDialogData.heading}}</h1>
+    </div>
+    <div class="vsbb-dialog-body">
+        <h4>{{ngDialogData.body.mainText}}</h4>
+        <p ng-repeat="field in ngDialogData.missingReqFields" class="vsbb-red-text-indicator">
+            <small>*{{field}}</small>
+        </p>
+    </div>
+    <div class="vsbb-dialog-footer"></div>
+</div>

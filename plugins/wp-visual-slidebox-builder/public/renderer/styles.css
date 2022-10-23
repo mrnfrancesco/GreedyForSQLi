@@ -1,0 +1,34 @@
+.vsbb-clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+* html .vsbb-clearfix {
+    zoom: 1;
+}
+
+.vsbb-p-l{
+    float: left;
+}
+
+.vsbb-image-caption-heading{
+    font-weight: 600!important;
+}
+
+.vsbb-angular-text-wrapper ol {
+    list-style-type: decimal!important;
+    margin-left: 1em!important;
+    margin-top: 0!important;
+}
+
+.vsbb-angular-text-wrapper dd, li {
+    margin-bottom: 0!important;;
+}
+
+.vsbb-image-caption-view customp {
+    text-align: center;
+}

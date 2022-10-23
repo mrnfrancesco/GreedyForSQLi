@@ -1,0 +1,361 @@
+<div class="clearfix vsbb-editor-section-div">
+    <!-- RESPONSIVE SETTINGS -->
+    <div class="vsbb-theme-section">
+        <p>Positioning Settings</p>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+        <div class="clearfix">
+            <div class="clearfix">
+                <div class="vsbb-p-l">
+                    <p class="vsbb-section-sub-title vsbb-m-t-small">Responsive</p>
+                    <switch ng-model="editorCtrl.saveObject.positioning.responsive"
+                            class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>
+                </div>
+                <div class="vsbb-p-l" ng-show="editorCtrl.saveObject.positioning.responsive">
+                    <div class="clearfix">
+                        <p class="vsbb-section-sub-title vsbb-m-t-small">Gutters</p>
+                        <switch ng-model="editorCtrl.saveObject.positioning.gutters"
+                                class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>
+                    </div>
+                </div>
+                <div class="vsbb-p-l" ng-show="editorCtrl.saveObject.positioning.responsive">
+                    <div class="clearfix">
+                        <p class="vsbb-section-sub-title vsbb-m-t-small">Preserve Ratio</p>
+                        <switch ng-model="editorCtrl.saveObject.positioning.preserveRatio"
+                                class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="editorCtrl.saveObject.positioning.responsive">
+                <div class="clearfix vsbb-column-settings">
+                    <p class="vsbb-section-sub-title vsbb-m-t-small">Column Settings</p>
+                    <span>Full Width</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass"
+                           value="vsbb-grid__col--12-of-12">
+                    <span>1 of 2</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col--1-of-2">
+                    <span>1 of 3</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col--1-of-3">
+                    <span>1 of 4</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col--1-of-4">
+                    <span>1 of 5</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col--1-of-5">
+                    <span>1 of 6</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col--1-of-6">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- INITIAL CONTENT SETTINGS -->
+    <div class="vsbb-theme-section">
+        <p>Box Settings</p>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Dimensions
+                <small>(Width & Height)</small>
+            </p>
+            <input class="vsbb-med-input l vsbb-p-l" type="text"
+                   ng-model="editorCtrl.saveObject.initial.styles.width">
+
+            <input class="vsbb-med-input l vsbb-p-l" type="text"
+                   ng-model="editorCtrl.saveObject.initial.styles.height">
+        </div>
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Border</p>
+            <color-picker name="initial.styles.border-color" class="vsbb-p-l "
+                          ng-model="editorCtrl.saveObject.initial.borderColorRaw"
+                          event-api="editorCtrl.colorApi"
+                          options="editorCtrl.colorPickerOptions"
+            ></color-picker>
+            <input class="vsbb-small-input vsbb-p-l" type="text"
+                   ng-model="editorCtrl.saveObject.initial.styles['border-width']">
+            <div class="vsbb-xsmall-select vsbb-p-l" dropdown-select="editorCtrl.borderOpts"
+                 dropdown-model="editorCtrl.saveObject.initial.borderStyleRaw"
+                 dropdown-item-label="name"
+                 dropdown-onchange="editorCtrl.borderStyleChanged(selected)">
+            </div>
+        </div>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Initial
+                <small>(Background Color)</small>
+            </p>
+            <p class="vsbb-control-label vsbb-p-l">
+                Color:
+            </p>
+            <color-picker name="initial.styles.background-color" class="vsbb-p-l vsbb-l-color-input"
+                          ng-model="editorCtrl.saveObject.initial.backgroundColor"
+                          event-api="editorCtrl.colorApi"
+                          options="editorCtrl.colorPickerOptions"
+            ></color-picker>
+        </div>
+        <div class="clearfix">
+            <a href="" class="button button-primary vsbb-small-btn"
+               ng-click="ctrl.setBackgroundImage($event, editorCtrl.saveObject.initial,'backgroundImg')">Use
+                Image</a>
+            <a href="" class="vsbb-m-l-xsmall button vsbb-small-btn"
+               ng-click="ctrl.removeBackgroundImage($event, editorCtrl.saveObject.initial,'backgroundImg')">Remove
+                Image</a>
+        </div>
+    </div>
+
+    <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+        <div class="clearfix">
+            <p class="vsbb-control-label vsbb-p-l">
+                Top Left
+            </p>
+            <div class="vsbb-slider-control vsbb-p-l">
+                <rzslider
+                        rz-slider-model="editorCtrl.saveObject.initial['border-top-left-radius']"
+                        rz-slider-options="editorCtrl.ITLsliderOptions"></rzslider>
+            </div>
+        </div>
+        <div class="clearfix">
+            <p class="vsbb-control-label vsbb-p-l">
+                Bottom Left
+            </p>
+            <div class="vsbb-slider-control vsbb-p-l">
+                <rzslider
+                        rz-slider-model="editorCtrl.saveObject.initial['border-bottom-left-radius']"
+                        rz-slider-options="editorCtrl.IBLsliderOptions"></rzslider>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+        <div class="clearfix">
+            <p class="vsbb-control-label vsbb-p-l">
+                Top Right
+            </p>
+            <div class="vsbb-slider-control vsbb-p-l">
+                <rzslider
+                        rz-slider-model="editorCtrl.saveObject.initial['border-top-right-radius']"
+                        rz-slider-options="editorCtrl.ITRsliderOptions"></rzslider>
+            </div>
+        </div>
+        <div class="clearfix">
+            <p class="vsbb-control-label vsbb-p-l">
+                Bottom Right
+            </p>
+            <div class="vsbb-slider-control vsbb-p-l">
+                <rzslider
+                        rz-slider-model="editorCtrl.saveObject.initial['border-bottom-right-radius']"
+                        rz-slider-options="editorCtrl.IBRsliderOptions"></rzslider>
+            </div>
+        </div>
+    </div>
+
+    <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Text Content
+                <small>(WYSIWYG)</small>
+            </p>
+            <text-angular ta-default-wrap="span" ta-toolbar-class="clearfix vsbb-editor-toolbar"
+                          ta-toolbar-group-class="vsbb-btn-group"
+                          ta-toolbar="[['backgroundColor'],['bold','italics','underline','strikeThrough','ul','ol'], ['justifyLeft','justifyCenter','justifyRight','indent','outdent'],['insertLink','undo','redo','clear']]"
+                          ng-model="editorCtrl.saveObject.initial.mainText"></text-angular>
+        </div>
+    </div>
+</div>
+<!-- FINAL CONTENT SETTINGS -->
+<div class="clearfix vsbb-editor-section-div">
+    <div class="vsbb-theme-section">
+        <p>Lit Settings</p>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Entrance Effect</p>
+            <div class="vsbb-flex-select vsbb-p-l" dropdown-select="editorCtrl.entranceEffects"
+                 dropdown-model="editorCtrl.saveObject.entranceEffect"
+                 dropdown-item-label="name"
+                 dropdown-onchange="editorCtrl.entranceEffectChanged(selected)">
+            </div>
+        </div>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Dimensions
+                <small>(Width & Height)</small>
+            </p>
+            <input class="vsbb-med-input l vsbb-p-l" type="text"
+                   ng-model="editorCtrl.saveObject.final.styles.width">
+
+            <input class="vsbb-med-input l vsbb-p-l" type="text"
+                   ng-model="editorCtrl.saveObject.final.styles.height">
+        </div>
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Border</p>
+            <color-picker name="final.styles.border-color" class="vsbb-p-l "
+                          ng-model="editorCtrl.saveObject.final.borderColorRaw"
+                          event-api="editorCtrl.colorApi"
+                          options="editorCtrl.colorPickerOptions"
+            ></color-picker>
+            <input class="vsbb-small-input vsbb-p-l" type="text"
+                   ng-model="editorCtrl.saveObject.final.styles['border-width']">
+            <div class="vsbb-xsmall-select vsbb-p-l" dropdown-select="editorCtrl.borderOpts"
+                 dropdown-model="editorCtrl.saveObject.final.borderStyleRaw"
+                 dropdown-item-label="name"
+                 dropdown-onchange="editorCtrl.borderStyleFinalChanged(selected)">
+            </div>
+        </div>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Final
+                <small>(Background Color)</small>
+            </p>
+            <p class="vsbb-control-label vsbb-p-l">
+                Color:
+            </p>
+            <color-picker name="final.styles.background-color" class="vsbb-p-l vsbb-l-color-input"
+                          ng-model="editorCtrl.saveObject.final.backgroundColor"
+                          event-api="editorCtrl.colorApi"
+                          options="editorCtrl.colorPickerOptions"
+            ></color-picker>
+        </div>
+        <div class="clearfix">
+            <a href="" class="button button-primary vsbb-small-btn"
+               ng-click="ctrl.setBackgroundImage($event, editorCtrl.saveObject.final,'backgroundImg')">Use
+                Image</a>
+            <a href="" class="vsbb-m-l-xsmall button vsbb-small-btn"
+               ng-click="ctrl.removeBackgroundImage($event, editorCtrl.saveObject.final,'backgroundImg')">Remove
+                Image</a>
+        </div>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+        <div class="clearfix">
+            <p class="vsbb-control-label vsbb-p-l">
+                Top Left
+            </p>
+            <div class="vsbb-slider-control vsbb-p-l">
+                <rzslider
+                        rz-slider-model="editorCtrl.saveObject.final['border-top-left-radius']"
+                        rz-slider-options="editorCtrl.FTLsliderOptions"></rzslider>
+            </div>
+        </div>
+        <div class="clearfix">
+            <p class="vsbb-control-label vsbb-p-l">
+                Bottom Left
+            </p>
+            <div class="vsbb-slider-control vsbb-p-l">
+                <rzslider
+                        rz-slider-model="editorCtrl.saveObject.final['border-bottom-left-radius']"
+                        rz-slider-options="editorCtrl.FBLsliderOptions"></rzslider>
+            </div>
+        </div>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+        <div class="clearfix">
+            <p class="vsbb-control-label vsbb-p-l">
+                Top Right
+            </p>
+            <div class="vsbb-slider-control vsbb-p-l">
+                <rzslider
+                        rz-slider-model="editorCtrl.saveObject.final['border-top-right-radius']"
+                        rz-slider-options="editorCtrl.FTRsliderOptions"></rzslider>
+            </div>
+        </div>
+        <div class="clearfix">
+            <p class="vsbb-control-label vsbb-p-l">
+                Bottom Right
+            </p>
+            <div class="vsbb-slider-control vsbb-p-l">
+                <rzslider
+                        rz-slider-model="editorCtrl.saveObject.final['border-bottom-right-radius']"
+                        rz-slider-options="editorCtrl.FBRsliderOptions"></rzslider>
+            </div>
+        </div>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Text Content
+                <small>(WYSIWYG)</small>
+            </p>
+            <text-angular ta-default-wrap="span" ta-toolbar-class="clearfix vsbb-editor-toolbar"
+                          ta-toolbar-group-class="vsbb-btn-group"
+                          ta-toolbar="[['backgroundColor'],['bold','italics','underline','strikeThrough','ul','ol'], ['justifyLeft','justifyCenter','justifyRight','indent','outdent'],['insertLink','undo','redo','clear']]"
+                          ng-model="editorCtrl.saveObject.final.mainText"></text-angular>
+        </div>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title vsbb-m-t-small">Call to Action
+                <small>(Settings)</small>
+                <switch ng-model="editorCtrl.saveObject.final.link.enabled"
+                        class="green vsbb-p-r vsbb-m-r-large vsbb-m-l-small"></switch>
+            </p>
+        </div>
+
+        <div ng-show="editorCtrl.saveObject.final.link.enabled">
+            <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+                <div class="clearfix">
+                    <p class="vsbb-section-sub-title vsbb-m-t-small">Position</p>
+                    <span>Top</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.final.link.position" value="vsbb-top-header-link">
+                    <span>Bottom</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.final.link.position" value="vsbb-bottom-header-link">
+                    <span>Left</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.final.link.position" value="vsbb-left-header-link">
+                    <span>Right</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.final.link.position" value="vsbb-right-header-link">
+                </div>
+            </div>
+            <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+                <div class="clearfix">
+                    <p class="vsbb-section-sub-title vsbb-m-t-small">Padding</p>
+                    <div class="vsbb-slider-control vsbb-p-l">
+                        <rzslider
+                                rz-slider-model="editorCtrl.saveObject.final.link.paddingRaw"
+                                rz-slider-options="editorCtrl.FPsliderOptions"></rzslider>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix vsbb-text-angular-small">
+                <p class="vsbb-control-label">
+                    Link Label:
+                </p>
+                <text-angular ta-default-wrap="span" ta-default-wrap="span"
+                              ta-toolbar-class="clearfix vsbb-editor-toolbar"
+                              ta-toolbar-group-class="vsbb-btn-group"
+                              ta-toolbar="[['backgroundColor'],['bold','italics','underline','strikeThrough'], ['justifyLeft','justifyCenter','justifyRight'],['insertLink','undo','redo','clear']]"
+                              ng-model="editorCtrl.saveObject.final.link.title"></text-angular>
+            </div>
+            <div class="clearfix">
+                <p class="vsbb-control-label vsbb-p-l">
+                    URL:
+                </p>
+                <input class="vsbb-flex-input l vsbb-p-l" placeholder="https://somewebsite.com" type="text"
+                       ng-model="editorCtrl.saveObject.final.link.url">
+            </div>
+            <div class="clearfix">
+                <p class="vsbb-control-label vsbb-p-l">
+                    Bcgk Color:
+                </p>
+                <color-picker name="final.link.styles.background-color" class="vsbb-p-l "
+                              ng-model="editorCtrl.saveObject.final.link.backgroundColorRaw"
+                              event-api="editorCtrl.colorApi"
+                              options="editorCtrl.colorPickerOptions"
+                ></color-picker>
+
+                <p class="vsbb-control-label vsbb-p-l vsbb-m-l-small">
+                    New Tab:
+                </p>
+                <switch ng-model="editorCtrl.saveObject.final.link.newTab"
+                        class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>
+            </div>
+        </div>
+    </div>
+</div>

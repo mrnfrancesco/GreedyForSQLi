@@ -1,0 +1,48 @@
+<div class="clearfix" ng-controller="vsbbImageCaptionThemeController as editorCtrl">
+    <div class="vsbb-controlls-container">
+        <div class="vsbb-controls vsbb-theme-selection-section"
+             ng-include="ctrl.getThemeSelector(ctrl.selectedTheme.value)"></div>
+        <p class="vsbb-paid-only-flag" ng-if="!ctrl.isThemeAllowed(ctrl.selectedTheme.value)">*This is a paid <b>Builder
+            Type</b>. You can preview it
+            but will not be able to use it <a target="_blank" href="http://wpvisualslideboxbuilder.com/pricing">
+                Purchase options</a></p>
+        <div class="vsbb-controls" ng-class="{'vsbb-paid-only-mask':!ctrl.isThemeAllowed(ctrl.selectedTheme.value)}">
+            <div class="vsbb-theme-content" ng-include="ctrl.getThemePartialEditor(ctrl.selectedTheme.value)"></div>
+        </div>
+    </div>
+    <div class="vsbb-preview-container">
+        <div class="vsbb-action-controls vsbb-controls">
+            <div class="vsbb-theme-section">
+                <p>Action Menu</p>
+            </div>
+            <div class="clearfix">
+                <div class="vsbb-theme-content vsbb-friendly-name">
+                    <div class="clearfix">
+                        <p class="vsbb-section-sub-title">Friendly Name</p>
+                        <input ng-model="editorCtrl.saveObject.friendlyName" id="vsbb_name" type="text"/>
+                        <input ng-show="editorCtrl.id" class="vsbb-shortcode-holder" type="text" readonly="readonly"
+                               value="[VSBB id={{editorCtrl.id}}]">
+                        <p class="vsbb-red-text-indicator" ng-show="editorCtrl.saveObject.friendlyName == ''">
+                            <small>*Friendly Name is required</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="vsbb-action-btns">
+                    <a href="" ng-click="editorCtrl.showHoverState($event)" class="button button-primary">Hover
+                        State</a>
+                    <a href="" ng-click="editorCtrl.save($event)" class="vsbb-btn button button-primary"
+                       ng-class="{disabled: editorCtrl.saveObject.friendlyName == ''}">Save</a>
+                    <a href="" ng-click="ctrl.cloneItemModal(editorCtrl.saveObject)" class="button button-primary"
+                       ng-class="{disabled: editorCtrl.saveObject.friendlyName == '', 'vsbb-paid-feature-btn':!ctrl.isFeatureAllowed('clone')}">Clone</a>
+                    <a href="#builder/image_caption" class="button">New</a>
+                </div>
+                <p ng-if="!ctrl.isFeatureAllowed('clone')"
+                   class="vsbb-paid-feature-control-text">*Clone is a paid feature</p>
+            </div>
+        </div>
+        <div class="vsbb-preview">
+            <div class="vsbb-theme-content"
+                 ng-include="ctrl.getThemePreviewPartial(ctrl.selectedTheme.value)"></div>
+        </div>
+    </div>
+</div>

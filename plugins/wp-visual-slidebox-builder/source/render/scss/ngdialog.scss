@@ -1,0 +1,94 @@
+@import "variables-mixing/variables";
+@import "variables-mixing/mixins";
+
+.vsbb-warning-dialog {
+  .ngdialog-content {
+    background-color: rgb(251, 250, 242) !important;
+    color: #8a6d3b !important;
+    h1, h4, p {
+      color: #8a6d3b !important;
+    }
+  }
+}
+
+.vsbb-success-dialog {
+  .ngdialog-content {
+    background-color: #f3f9f0 !important;
+    color: #3c763d !important;
+    h1, h4, p {
+      color: #3c763d !important;
+    }
+  }
+}
+
+.vsbb-fail-dialog {
+  .ngdialog-content {
+    background-color: #f3ebeb !important;
+    color: #a94442 !important;
+    h1, h4, p {
+      color: #a94442 !important;
+    }
+  }
+}
+
+.vsbb-iframe-dialog {
+  .ngdialog-content {
+    padding: 40px 0 !important;
+    width: 700px !important;
+    height: 700px !important;
+    img {
+      &.vsbb-loader {
+        position: absolute;
+        left: 270px;
+        top: 150px;
+      }
+    }
+    iframe {
+      width: 100%;
+      height: 700px;
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+.ngdialog-content {
+  border-bottom: 10px solid;
+  @include border-radius(3px);
+  .vsbb-dialog-content {
+    .vsbb-dialog-heading {
+      h1 {
+        font-size: 22px;
+      }
+    }
+    .vsbb-dialog-body {
+
+    }
+    .vsbb-dialog-footer {
+      text-align: right;
+      border-top: 1px solid #9ea3a8;
+      padding-top: 10px;
+      a {
+        &.vsbb-btn-item {
+          text-decoration: none;
+          background-color: #adabab;
+          color: #ffffff;
+          padding: 6px;
+          @include border-radius(2px);
+        }
+        &.vsbb-main-btn {
+          background-color: #094561;
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+
+  }
+}
+.ngdialog-close{
+  padding: 0 10px!important;
+}
+
+

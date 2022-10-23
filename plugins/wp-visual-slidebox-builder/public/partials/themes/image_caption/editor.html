@@ -1,0 +1,281 @@
+<div class="vsbb-editor-section-div">
+    <div class="vsbb-theme-section">
+        <p>Positioning Settings</p>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--12-of-12"
+         ng-class="{'vsbb-paid-only-mask vsbb-paid-feature':!ctrl.getPaidVersion()}">
+        <div class="clearfix">
+            <p class="vsbb-paid-only-flag" ng-if="!ctrl.isFeatureAllowed('responsive')">*This is a paid <b>Feature</b> only Button & Link allowed.
+                You
+                can preview it
+                but it won't take effect when rendering. <a target="_blank"
+                                                            href="http://wpvisualslideboxbuilder.com/pricing">
+                    Purchase options</a></p>
+            <div class="clearfix">
+                <div class="vsbb-p-l">
+                    <p class="vsbb-section-sub-title vsbb-m-t-small">Responsive</p>
+                    <switch ng-model="editorCtrl.saveObject.positioning.responsive"
+                            class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>
+                </div>
+                <div class="vsbb-p-l" ng-show="editorCtrl.saveObject.positioning.responsive">
+
+                    <p class="vsbb-section-sub-title vsbb-m-t-small">Gutters</p>
+                    <switch ng-model="editorCtrl.saveObject.positioning.gutters"
+                            class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>
+
+                </div>
+                <div class="vsbb-p-l" ng-show="editorCtrl.saveObject.positioning.responsive">
+
+                    <p class="vsbb-section-sub-title vsbb-m-t-small">Preserve Ratio</p>
+                    <switch ng-model="editorCtrl.saveObject.positioning.preserveRatio"
+                            class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>
+
+                </div>
+            </div>
+            <div ng-show="editorCtrl.saveObject.positioning.responsive">
+                <div class="clearfix vsbb-column-settings">
+                    <p class="vsbb-section-sub-title vsbb-m-t-small">Column Settings</p>
+                    <span>Full Width</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass"
+                           value="vsbb-grid__col--12-of-12">
+                    <span>1 of 2</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col--1-of-2">
+                    <span>1 of 3</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col--1-of-3">
+                    <span>1 of 4</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col--1-of-4">
+                    <span>1 of 5</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col--1-of-5">
+                    <span>1 of 6</span>
+                    <input type="radio" name="vsbb-cta-position"
+                           ng-model="editorCtrl.saveObject.positioning.responsiveClass" value="vsbb-grid__col--1-of-6">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="vsbb-editor-section-div">
+    <div class="vsbb-theme-section">
+        <p>General Settings</p>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Effect
+                <small>Hovering effects</small>
+            </p>
+            <div class="vsbb-auto-select" dropdown-select="editorCtrl.hoverEffects"
+                 dropdown-model="editorCtrl.saveObject.hoverEffect"
+                 dropdown-item-label="name">
+            </div>
+        </div>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Dimensions
+                <small>(Width & Height)</small>
+            </p>
+            <input class="vsbb-med-input l vsbb-p-l" type="text" ng-model="editorCtrl.saveObject.initial.styles.width">
+
+            <input class="vsbb-med-input l vsbb-p-l" type="text" ng-model="editorCtrl.saveObject.initial.styles.height">
+        </div>
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Border</p>
+            <color-picker name="initial.styles.border-color" class="vsbb-p-l "
+                          ng-model="editorCtrl.saveObject.initial.borderColorRaw"
+                          event-api="editorCtrl.colorApi"
+                          options="ctrl.colorPickerOptions"
+            ></color-picker>
+            <input class="vsbb-small-input vsbb-p-l" type="text"
+                   ng-model="editorCtrl.saveObject.initial.styles['border-width']">
+            <div class="vsbb-xsmall-select vsbb-p-l" dropdown-select="editorCtrl.borderOpts"
+                 dropdown-model="editorCtrl.saveObject.initial.borderStyleRaw"
+                 dropdown-item-label="name"
+                 dropdown-onchange="editorCtrl.borderStyleChanged(selected)">
+            </div>
+        </div>
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Border Radius</p>
+            <div class="vsbb-slider-control vsbb-p-l">
+                <rzslider
+                        rz-slider-model="editorCtrl.saveObject.initial.borderRadiusRaw"
+                        rz-slider-options="editorCtrl.sliderOptions"></rzslider>
+            </div>
+        </div>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--1-of-2">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Initial
+                <small>(Background Color)</small>
+            </p>
+            <p class="vsbb-control-label vsbb-p-l">
+                Color:
+            </p>
+            <color-picker name="initial.styles.background-color" class="vsbb-p-l vsbb-l-color-input"
+                          ng-model="editorCtrl.saveObject.initial.backgroundColorRaw"
+                          event-api="editorCtrl.colorApi"
+                          options="ctrl.colorPickerOptions"
+            ></color-picker>
+        </div>
+        <div class="clearfix">
+            <a href="" class="button button-primary vsbb-small-btn"
+               ng-click="ctrl.setBackgroundImage($event, editorCtrl.saveObject.initial,'backgroundImg')">Use
+                Image</a>
+            <a href="" class="vsbb-m-l-xsmall button vsbb-small-btn"
+               ng-click="ctrl.removeBackgroundImage($event, editorCtrl.saveObject.initial,'backgroundImg')">Remove
+                Image</a>
+        </div>
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Mask
+                <small>(Background Color)</small>
+            </p>
+            <p class="vsbb-control-label vsbb-p-l">
+                Color:
+            </p>
+            <color-picker name="mask.styles.background-color" class="vsbb-p-l vsbb-l-color-input"
+                          ng-model="editorCtrl.saveObject.mask.backgroundColorRaw"
+                          event-api="editorCtrl.colorApi"
+                          options="ctrl.colorPickerOptions"
+            ></color-picker>
+        </div>
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Heading
+                <small>(Color scheme)</small>
+            </p>
+            <p class="vsbb-control-label vsbb-p-l">
+                Color:
+            </p>
+            <div ng-if="editorCtrl.saveObject.hoverEffect.type == '1'">
+                <color-picker name="final.heading.styles.background-color" class="vsbb-p-l vsbb-l-color-input"
+                              ng-model="editorCtrl.saveObject.final.headingColorSchemeRaw"
+                              event-api="editorCtrl.colorApi"
+                              options="ctrl.colorPickerOptions"
+                ></color-picker>
+            </div>
+            <div ng-if="editorCtrl.saveObject.hoverEffect.type == '2'">
+                <color-picker name="final.heading.styles.border-color" class="vsbb-p-l vsbb-l-color-input"
+                              ng-model="editorCtrl.saveObject.final.headingColorSchemeRaw2"
+                              event-api="editorCtrl.colorApi"
+                              options="ctrl.colorPickerOptions"
+                ></color-picker>
+            </div>
+        </div>
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title"><span
+                    ng-if="editorCtrl.saveObject.hoverEffect.value != '9'">Link</span><span
+                    ng-if="editorCtrl.saveObject.hoverEffect.value == '9'">Content</span>
+                <small>(Color scheme)</small>
+            </p>
+            <p class="vsbb-control-label vsbb-p-l">
+                Color:
+            </p>
+            <color-picker name="final.link.styles.background-color" class="vsbb-p-l vsbb-l-color-input"
+                          ng-model="editorCtrl.saveObject.final.linkColorSchemeRaw"
+                          event-api="editorCtrl.colorApi"
+                          options="ctrl.colorPickerOptions"
+            ></color-picker>
+        </div>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+        <div class="clearfix vsbb-text-angular-small ">
+            <p class="vsbb-section-sub-title">Heading
+                <small>(WYSIWYG)</small>
+            </p>
+            <text-angular ta-default-wrap="span" ta-toolbar-class="clearfix vsbb-editor-toolbar"
+                          ta-toolbar-group-class="vsbb-btn-group"
+                          ta-toolbar="[['backgroundColor'],['fontSize','fontName','bold','italics','underline','strikeThrough'], ['justifyLeft','justifyCenter','justifyRight'],['insertLink','undo','redo','clear']]"
+                          ng-model="editorCtrl.saveObject.heading"></text-angular>
+
+        </div>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+        <div class="clearfix">
+            <p class="vsbb-section-sub-title">Main Content
+                <small>(WYSIWYG)</small>
+            </p>
+            <text-angular ta-default-wrap="span" ta-toolbar-class="clearfix vsbb-editor-toolbar"
+                          ta-toolbar-group-class="vsbb-btn-group"
+                          ta-toolbar="[['backgroundColor'],['fontSize','fontName','bold','italics','underline','strikeThrough','ul','ol'], ['justifyLeft','justifyCenter','justifyRight'],['insertLink','undo','redo','clear']]"
+                          ng-model="editorCtrl.saveObject.mainContent"></text-angular>
+        </div>
+    </div>
+</div>
+<div class="vsbb-editor-section-div">
+
+    <div class="vsbb-theme-section ">
+        <p>Advanced Call to Action</p>
+    </div>
+    <div class="vsbb-grid__col vsbb-grid__col--12-of-12">
+        <div class="vsbb-enclosed">
+            <span class="vsbb-paid-only-flag" ng-if="!ctrl.isFeatureAllowed('advanced-c2a')">*Mask & Modal Popup are paid <b>Features</b></span>
+
+            <div class="clearfix">
+                <input ng-if="editorCtrl.saveObject.hoverEffect.value != '9'"
+                       ng-model="editorCtrl.saveObject.c2a.final.category" name="vsbb-c2a-category" value="button"
+                       type="radio">
+                <span ng-if="editorCtrl.saveObject.hoverEffect.value != '9'">Button</span>
+
+                <input ng-model="editorCtrl.saveObject.c2a.final.category" name="vsbb-c2a-category" value="mask"
+                       type="radio">
+                <span ng-if="!ctrl.isFeatureAllowed('advanced-c2a')" style="color: red">Mask</span>
+                <span ng-if="ctrl.isFeatureAllowed('advanced-c2a')">Mask</span>
+            </div>
+            <div class="clearfix vsbb-c2a-lighbox">
+                <div class="clearfix">
+
+                    <input ng-model="editorCtrl.saveObject.c2a.final.type" name="vsbb-c2a" value="link" type="radio">
+                    <span>Link</span>
+
+                    <input ng-model="editorCtrl.saveObject.c2a.final.type" name="vsbb-c2a" value="modal" type="radio">
+                    <span ng-if="!ctrl.isFeatureAllowed('advanced-c2a')" style="color: red">Modal Popup</span>
+                    <span ng-if="ctrl.isFeatureAllowed('advanced-c2a')">Modal Popup</span>
+                </div>
+            </div>
+
+            <div class="clearfix">
+                <b>Note:</b>
+                <p>Choose what triggers the Call to Action, a Button or the Mask (content after hover) </p>
+                <p>Choose what the Call to Action will lead to. A new page (Link) or a *Modal Pop (Modal)</p>
+                <p>You can create Modal Popups using the Modal Popup Builder<a href="#builder/modal">Here</a></p>
+            </div>
+
+        </div>
+
+        <div ng-show="!editorCtrl.saveObject.c2a || editorCtrl.saveObject.c2a.final.category =='button'" class="clearfix vsbb-text-angular-small">
+            <p class="vsbb-section-sub-title">Button Label</p>
+            <text-angular ta-default-wrap="span" ta-toolbar-class="clearfix vsbb-editor-toolbar"
+                          ta-toolbar-group-class="vsbb-btn-group"
+                          ta-toolbar="[['backgroundColor'],['fontSize','fontName','bold','italics','underline','strikeThrough'],['insertLink','undo','redo','clear']]"
+                          ng-model="editorCtrl.saveObject.final.link.title"></text-angular>
+        </div>
+
+        <div class="clearfix" ng-show="!editorCtrl.saveObject.c2a || editorCtrl.saveObject.c2a.final.type =='link'">
+            <div class="clearfix">
+                <input class="vsbb-flex-input l vsbb-p-l" placeholder="https://somewebsite.com" type="text"
+                       ng-model="editorCtrl.saveObject.final.link.url">
+            </div>
+            <div class="clearfix">
+                <p class="vsbb-control-label vsbb-p-l">
+                    New Tab:
+                </p>
+                <switch ng-model="editorCtrl.saveObject.final.link.newTab"
+                        class="green vsbb-p-l vsbb-m-r-large vsbb-m-l-small"></switch>
+            </div>
+        </div>
+
+        <div class="clearfix" ng-show="editorCtrl.saveObject.c2a.final.type =='modal'">
+            <p>Select an existing modal to trigger on click <a href="#builder/modal">Create new Modal</a></p>
+            <div class="vsbb-auto-select" dropdown-select="editorCtrl.modals"
+                 dropdown-model="editorCtrl.saveObject.c2a.final.modal"
+                 dropdown-item-label="friendly_name">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

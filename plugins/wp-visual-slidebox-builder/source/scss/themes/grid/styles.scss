@@ -1,0 +1,31 @@
+@import "../../variables";
+@import "../../mixins";
+.vsbb-grid-editor-col{
+  .vsbb-grid-editor-container{
+    border: 1px solid $border-grey;
+    margin: 0 1px;
+    text-align: center;
+    padding: 10px 10px 35px 10px;
+    height: 77px;
+    box-sizing: content-box;
+    .ui-select-container{
+      width: 100%;
+      .ui-select-choices{
+        text-align: left;
+        small{
+          span{
+            display: block;
+          }
+        }
+      }
+    }
+    &.vsbb-grid-render{
+      height: 100%;
+      padding: 0;
+      border: none;
+    }
+    p{
+      margin: 0 10px 10px;
+    }
+  }
+}

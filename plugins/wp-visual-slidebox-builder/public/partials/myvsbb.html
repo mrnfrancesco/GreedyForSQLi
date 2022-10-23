@@ -1,0 +1,151 @@
+<div class="vsbb-body clearfix">
+    <div class="vsbb-my vsbb-grid vsbb-flexbox-container">
+        <div class="vsbb-grid__col vsbb-grid__col--1-of-4">
+            <div class="vsbb-promotions">
+
+                <h3>Useful Resources</h3>
+                <h4 class="vsbb-intro-heading">Community Forum</h4>
+                <p>Interact with other users of Visual Slide Builder. Post questions and review answers to previous questions posted by other users.</p>
+                <a href="http://wpvisualslideboxbuilder.com/forums/forum/free-support-forum" target="_blank">Community
+                    Forum</a>
+
+                <hr>
+
+                <h4 class="vsbb-intro-heading">Post a Review</h4>
+                <p>Whether you want to tell others how awesome is Visual Slide Builder, or have some feedback on how we could make it better, we would love to hear about it.</p>
+                <a href="https://wordpress.org/support/plugin/wp-visual-slidebox-builder/reviews" target="_blank">Post a
+                    Review</a>
+
+                <hr>
+
+                <h4 class="vsbb-intro-heading">Paid Version Pricing</h4>
+                <p>If you are looking to purchase or upgrade a license please visit our pricing page for more details.</p>
+                <a href="https://wordpress.org/support/plugin/wp-visual-slidebox-builder/reviews" target="_blank">Post a
+                    Review</a>
+
+            </div>
+        </div>
+        <div class="vsbb-grid__col vsbb-grid__col--3-of-4">
+            <div class="vsbb-promotions clearfix">
+                <h3>My VAB</h3>
+                <div class="vsbb-lic-container">
+
+                    <h4 class="vsbb-intro-heading">License Entry:</h4>
+                    <input id="vsbb-lic" ng-model="ctrl.license" type="text"/>
+                    <a class="button button-primary" ng-click="ctrl.validateLicense()"
+                       ng-class="{disabled: ctrl.license == '' || ctrl.license == null}">Validate</a>
+                    <i ng-if="ctrl.isValidLicense" class="fa fa-check" aria-hidden="true"> License Validated</i>
+
+                    <div>
+                        <br>
+                        <h4 class="vsbb-intro-heading">Need a license for a paid feature?</h4>
+                        <p>
+                            Check out our pricing if you are interested in purchasing or upgrading a license. <a
+                                    target="_blank" href="https://wpvisualslideboxbuilder.com/pricing">Pricing Page</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="vsbb-intro-container">
+                    <h3>What's new?</h3>
+                    <p>
+                        We have given this plugin a make over! We are excited to present you with the new 3.0 version of Visual Animation Builder.
+                        Taking feedback from many users and personal experiences we have added new features, improved exciting features, upgraded the backend and frontend to
+                        more modern technologies. Here is a brief breakdown on what you can expect. For more details on features and more please visit our website <a target="_blank" href="https://wpvisualslideboxbuilder.com/">wpvisualslideboxbuilder.com</a>
+                    </p>
+                    <!-- New Features-->
+                    <h3 class="vsbb-expand">New Features <a href="" ng-click="ctrl.newFeaturesExpand = !ctrl.newFeaturesExpand">Learn More</a></h3>
+                    <div class="vsbb-learn-more" ng-class="{'vsbb-learn-more-hidden':!ctrl.newFeaturesExpand}">
+                        <div class="vsbb-new-and-improved-features">
+                            <h4 class="vsbb-intro-heading">• Builder Types</h4>
+                            <p>
+                                We have added multiple builder types to fit your needs. Some just need a quick and simple animation, while others might need a more custom and explicit animation.
+                                By adding builder types we are not limiting those with extensive customizations and at the same time we are not over complicating the process for those looking for
+                                something simple and quick.
+                            </p>
+                            <h4 class="vsbb-intro-heading">• Grid Builder</h4>
+                            <p>
+                                We have added multiple builder types to fit your needs. Some just need a quick and simple animation, while others might need a more custom and explicit animation.
+                                By adding builder types we are not limiting those with extensive customizations and at the same time we are not over complicating the process for those looking for
+                                something simple and quick.
+                            </p>
+                            <h4 class="vsbb-intro-heading">• Hover State Preview</h4>
+                            <p>
+                                This feature allows you to see the changes you are making to the hiden portion of the animation by making it appear on the screen while you edit it, so you don't have to manually
+                                trigger it each time by hovering over.
+                            </p>
+                            <h4 class="vsbb-intro-heading">• Opacity/Transparency for all animation type</h4>
+                            <p>
+                                In the pass the opacity setting was only meant to be used with a handful of effects. We have changed how this feature is applied to allow it to be used in every single
+                                effect and transition.
+                            </p>
+                            <h4 class="vsbb-intro-heading">• WYSIWYG Text Editor</h4>
+                            <p>
+                                We added WYSIWYG text editor to make your life easier.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Improved Features-->
+                    <h3 class="vsbb-expand">Improved Features <a href="" ng-click="ctrl.improvedFeaturesExpand = !ctrl.improvedFeaturesExpand">Learn More</a></h3>
+                    <div class="vsbb-learn-more" ng-class="{'vsbb-learn-more-hidden':!ctrl.improvedFeaturesExpand}">
+                        <div class="vsbb-new-and-improved-features">
+                            <h4 class="vsbb-intro-heading">• Responsive Layouts</h4>
+                            <p>
+                                We have enhanced and simplified the responsive feature. Now you can choose more options to compliment your responsive animation, such as gutters, whether or not you wish to
+                                preserve the ratio when resizing, and we added a more comprehensive layout with upto 6 columns.
+                            </p>
+                            <h4 class="vsbb-intro-heading">• A lot more transitions and effects</h4>
+                            <p>
+                                We upgraded our transitions and effects list to include a lot more. Now you have over 38 effects and transitions to choose from.
+                            </p>
+                            <h4 class="vsbb-intro-heading">• Updating/Upgrading</h4>
+                            <p>
+                                We simplified the process of updates and upgrades. For those looking to purchase a paid version, the process is a lot simpler now. Simply
+                                copy and paste the license and you are all set! No need to uninstall or install anything.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Legacy Support-->
+                    <h3 class="vsbb-expand">Legacy Support <a href="" ng-click="ctrl.legacySupportExpand = !ctrl.legacySupportExpand">Learn More</a></h3>
+                    <div class="vsbb-learn-more" ng-class="{'vsbb-learn-more-hidden':!ctrl.legacySupportExpand}">
+                        <div class="vsbb-new-and-improved-features">
+                            <h4 class="vsbb-intro-heading">What about legacy support?</h4>
+                            <p>
+                                We will continue to support the rendering of legacy animations. This means <b>your site won't break</b> if it is using legacy creations somewhere in its pages. However, we will no longer support editing legacy animations. You have access to your
+                                legacy animations on the history page, from where you can access the shortcodes and use it. However, we strongly encourage users to use the new builder types to improve performance and
+                                usability.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--                <div class="vsbb-grid">-->
+                <!--                    <div class="vsbb-promo-box vsbb-grid__col vsbb-grid__col--1-of-3">-->
+                <!--                        <img src="{{ctrl.getPublicRootUrl()}}/images/f1.png" alt="">-->
+                <!--                        <p><b>Real time Preview</b> feature tool helps you make changes and see them taking effect in realtime, without having to refresh. Design your masterpiece and simply copy and paste the shortcode.</p>-->
+                <!--                    </div>-->
+                <!--                    <div class="vsbb-promo-box vsbb-grid__col vsbb-grid__col--1-of-3">-->
+                <!--                        <img src="{{ctrl.getPublicRootUrl()}}/images/f2.png" alt="">-->
+                <!--                        <p>When we built this plugin we had <b>customization</b> as the main goal. With so many settings and configurations we make sure you have full control to create truly unique animations for your site.</p>-->
+                <!--                    </div>-->
+                <!--                    <div class="vsbb-promo-box vsbb-grid__col vsbb-grid__col--1-of-3">-->
+                <!--                        <img src="{{ctrl.getPublicRootUrl()}}/images/f3.png" alt="">-->
+                <!--                        <p><b>Responsive</b> is a must have. That is why Visual Slide Box Builder comes preloaded with multiple responsive layout options, including a fully custom one, to adapt to all of your needs.</p>-->
+                <!--                    </div>-->
+                <!--                    <div class="vsbb-promo-box vsbb-grid__col vsbb-grid__col--1-of-3">-->
+                <!--                        <img src="{{ctrl.getPublicRootUrl()}}/images/f4.png" alt="">-->
+                <!--                        <p>Create amazing animations for your front page using our <b>Grid Layout</b> feature. This feature allows you to group multiple slide animations into a grid layout, guaranteed  make your site stand out.</p>-->
+                <!--                    </div>-->
+                <!--                    <div class="vsbb-promo-box vsbb-grid__col vsbb-grid__col--1-of-3">-->
+                <!--                        <img src="{{ctrl.getPublicRootUrl()}}/images/f5.png" alt="">-->
+                <!--                        <p>The plugin comes with a built in power visual editor. It’s a features rich backend, design to make your life easier. Create beautiful slide animations <b>without writing any code</b> whatsoever.</p>-->
+                <!--                    </div>-->
+                <!--                    <div class="vsbb-promo-box vsbb-grid__col vsbb-grid__col--1-of-3">-->
+                <!--                        <img src="{{ctrl.getPublicRootUrl()}}/images/f6.png" alt="">-->
+                <!--                        <p>The plugin comes preloaded with <b>lots of transitions and animations</b> to give you a wide range of possibilities as to what you can build. Make your site come alive with our built in animations.</p>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+            </div>
+
+        </div>
+    </div>
+</div>

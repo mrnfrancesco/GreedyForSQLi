@@ -1,0 +1,16 @@
+<div class="vsbb-dialog-content">
+    <div class="vsbb-dialog-heading">
+        <h1>{{ngDialogData.heading}}</h1>
+    </div>
+    <div class="vsbb-dialog-body">
+        <h4>{{ngDialogData.body.mainText}}</h4>
+        <p>{{ngDialogData.body.subText}}</p>
+        <p><a target="_blank" href="http://wpvisualslideboxbuilder.com/pricing">Purchase Options</a></p>
+    </div>
+    <div ng-if="ngDialogData.footer" class="vsbb-dialog-footer">
+        <a ng-if="ngDialogData.footer.mainCtaText" href="" ng-click="ngDialogData.footer.mainCta()"
+           class="button button-primary">{{ngDialogData.footer.mainCtaText}}</a>
+        <a ng-if="ngDialogData.footer.subCtaText" href="" ng-click="ngDialogData.footer.subCta()"
+           class="button">{{ngDialogData.footer.subCtaText}}</a>
+    </div>
+</div>

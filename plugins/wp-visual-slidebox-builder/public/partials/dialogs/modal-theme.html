@@ -1,0 +1,27 @@
+<div class="vsbb-dialog-content">
+    <div ng-if="ngDialogData.iframe">
+        <img class="vsbb-loader" ng-src="{{ngDialogData.loaderImage}}" alt="">
+        <iframe ng-src="{{ngDialogData.iframeURLTrusted}}" frameborder="0"></iframe>
+    </div>
+    <div ng-if="!ngDialogData.iframe">
+        <div class="vsbb-dialog-heading">
+            <h1>{{ngDialogData.heading}}</h1>
+        </div>
+        <div class="vsbb-dialog-body">
+            <h4>{{ngDialogData.body.mainText}}</h4>
+            <p>{{ngDialogData.body.subText}}</p>
+        </div>
+        <div ng-if="ngDialogData.footer" class="vsbb-dialog-footer">
+            <a ng-if="ngDialogData.footer.mainCtaText && ngDialogData.footer.mainCtaLink==''" href=""
+               ng-click="closeThisDialog()"
+               class="vsbb-btn-item vsbb-main-btn">{{ngDialogData.footer.mainCtaText}}</a>
+
+            <a ng-if="ngDialogData.footer.mainCtaText && ngDialogData.footer.mainCtaLink !=''"
+               href="{{ngDialogData.footer.mainCtaLink}}" target="_blank" ng-click="closeThisDialog()"
+               class="vsbb-btn-item vsbb-main-btn">{{ngDialogData.footer.mainCtaText}}</a>
+
+            <a ng-if="ngDialogData.footer.subCtaText" href="" ng-click="closeThisDialog()"
+               class="vsbb-btn-item">{{ngDialogData.footer.subCtaText}}</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+.vsbb-warning-dialog .ngdialog-content {
+  background-color: #fbfaf2 !important;
+  color: #8a6d3b !important; }
+  .vsbb-warning-dialog .ngdialog-content h1, .vsbb-warning-dialog .ngdialog-content h4, .vsbb-warning-dialog .ngdialog-content p {
+    color: #8a6d3b !important; }
+
+.vsbb-success-dialog .ngdialog-content {
+  background-color: #f3f9f0 !important;
+  color: #3c763d !important; }
+  .vsbb-success-dialog .ngdialog-content h1, .vsbb-success-dialog .ngdialog-content h4, .vsbb-success-dialog .ngdialog-content p {
+    color: #3c763d !important; }
+
+.vsbb-fail-dialog .ngdialog-content {
+  background-color: #f3ebeb !important;
+  color: #a94442 !important; }
+  .vsbb-fail-dialog .ngdialog-content h1, .vsbb-fail-dialog .ngdialog-content h4, .vsbb-fail-dialog .ngdialog-content p {
+    color: #a94442 !important; }
+
+.vsbb-iframe-dialog .ngdialog-content {
+  padding: 40px 0 !important;
+  width: 700px !important;
+  height: 700px !important; }
+  .vsbb-iframe-dialog .ngdialog-content img.vsbb-loader {
+    position: absolute;
+    left: 270px;
+    top: 150px; }
+  .vsbb-iframe-dialog .ngdialog-content iframe {
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    left: 0; }
+
+.ngdialog-content {
+  border-bottom: 10px solid;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px; }
+  .ngdialog-content .vsbb-dialog-content .vsbb-dialog-heading h1 {
+    font-size: 22px; }
+  .ngdialog-content .vsbb-dialog-content .vsbb-dialog-footer {
+    text-align: right;
+    border-top: 1px solid #9ea3a8;
+    padding-top: 10px; }
+    .ngdialog-content .vsbb-dialog-content .vsbb-dialog-footer a.vsbb-btn-item {
+      text-decoration: none;
+      background-color: #adabab;
+      color: #ffffff;
+      padding: 6px;
+      border-radius: 2px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px; }
+    .ngdialog-content .vsbb-dialog-content .vsbb-dialog-footer a.vsbb-main-btn {
+      background-color: #094561; }
+    .ngdialog-content .vsbb-dialog-content .vsbb-dialog-footer a:hover {
+      opacity: 0.8; }
+
+.ngdialog-close {
+  padding: 0 10px !important; }
+
+

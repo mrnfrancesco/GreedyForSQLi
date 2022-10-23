@@ -1,0 +1,227 @@
+@import "variables";
+@import "mixins";
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+* html .clearfix {
+  zoom: 1;
+}
+
+/* IE6 */
+*:first-child + html .clearfix {
+  zoom: 1;
+}
+
+/* IE7 */
+.vsbb-p-l {
+  float: left;
+}
+
+.vsbb-p-r {
+  float: right;
+}
+
+.vsbb-small-btn {
+  width: 95px;
+  padding: 0 !important;
+  font-size: 10px ! important;
+  text-align: center;
+}
+
+.vsbb-xsmall-btn {
+  width: 55px;
+  padding: 0 !important;
+  font-size: 10px ! important;
+  text-align: center;
+}
+
+.vsbb-large-btn {
+  width: 198px;
+  padding: 0 !important;
+  font-size: 10px ! important;
+  text-align: center;
+}
+
+.vsbb-xsmall-input {
+  width: 66px;
+  height: 27px;
+  font-size: 11px;
+}
+
+.vsbb-small-input {
+  width: 80px;
+  height: 27px;
+  font-size: 11px;
+}
+
+.vsbb-med-input {
+  width: 130px;
+  height: 27px;
+  font-size: 11px;
+}
+
+.vsbb-flex-input {
+  width: 100%;
+  height: 27px;
+  font-size: 11px;
+}
+
+.vsbb-xsmall-select {
+  width: 85px !important;
+}
+
+.vsbb-auto-select {
+  width: auto !important;
+}
+
+.vsbb-flex-select {
+  width: 100% !important;
+}
+
+.vsbb-med-select {
+  width: 240px !important;
+}
+
+.vsbb-p-r-xsmall {
+  padding-right: 5px !important;
+}
+
+.vsbb-p-r-small {
+  padding-right: 10px !important;
+}
+
+.vsbb-p-r-med {
+  padding-right: 20px !important;
+}
+
+.vsbb-p-r-large {
+  padding-right: 30px !important;
+}
+
+.vsbb-p-l-xsmall {
+  padding-left: 5px !important;
+}
+
+.vsbb-p-l-small {
+  padding-left: 10px !important;
+}
+
+.vsbb-p-l-med {
+  padding-left: 20px !important;
+}
+
+.vsbb-p-l-large {
+  padding-left: 30px !important;
+}
+
+.vsbb-m-t-xmall {
+  margin-top: 5px !important;
+}
+
+.vsbb-m-r-xsmall {
+  margin-right: 5px !important;
+}
+
+.vsbb-m-r-small {
+  margin-right: 10px !important;
+}
+
+.vsbb-m-r-med {
+  margin-right: 20px !important;
+}
+
+.vsbb-m-r-large {
+  margin-right: 30px !important;
+}
+
+.vsbb-m-l-xsmall {
+  margin-left: 5px !important;
+}
+
+.vsbb-m-l-small {
+  margin-left: 10px !important;
+}
+
+.vsbb-m-l-med {
+  margin-left: 20px !important;
+}
+
+.vsbb-m-l-large {
+  margin-left: 30px !important;
+}
+
+.vsbb-m-t-small {
+  margin-top: 10px !important;
+}
+
+.vsbb-m-t-med {
+  margin-top: 20px !important;
+}
+
+.vsbb-m-b-med {
+  margin-bottom: 20px !important;
+}
+
+a.disabled{
+  cursor: not-allowed!important;
+  pointer-events: none!important;
+}
+.vsbb-red-text-indicator{
+  color: $red;
+  margin: 0;
+}
+
+.button.button-primary.vsbb-paid-feature-btn{
+  cursor: not-allowed !important;
+  color: #ff7b78 !important;
+  background: #fef7f7 !important;
+  border-color: #ff908d !important;
+  text-shadow: none!important;
+  box-shadow: none!important;
+}
+
+.vsbb-paid-only-flag{
+  font-size: 11px;
+  font-style: italic;
+  margin: 0;
+  padding: 0 10px;
+  color: $red;
+}
+
+.vsbb-paid-feature-control-text{
+  text-align: right;
+  font-size: 11px;
+  margin-right: 2px;
+  color: $red;
+  margin-top: 17px;
+  display: block;
+  font-style: italic;
+}
+
+.vsbb-paid-only-mask{
+  opacity:.7;
+  background-color: rgba(241, 15, 15, 0.05);
+  padding-top: 0!important;
+  margin-top: 10px;
+  &.vsbb-paid-feature{
+    margin: -10px;
+    width: 578px;
+    padding: 15px;
+    margin-bottom: -20px;
+  }
+}
+.vsbb-pointer-cursor{
+  cursor: pointer!important;
+}
+
+.vsbb-enclosed{
+  border: 1px solid #9ea3a7;
+  padding: 10px;
+  @include border-radius(3px);
+}

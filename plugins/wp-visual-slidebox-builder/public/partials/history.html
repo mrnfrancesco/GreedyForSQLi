@@ -1,0 +1,48 @@
+<div class="vsbb-body clearfix">
+    <div class="vsbb-controlls-container vsbb-flex-width">
+        <div class="vsbb-controls">
+            <div class="vsbb-theme-section">
+                <p>Builder Type Selection</p>
+            </div>
+            <div class="vsbb-theme-selector" dropdown-select="ctrl.themes"
+                 dropdown-model="ctrl.selectedTheme"
+                 dropdown-item-label="name"
+                 dropdown-onchange="ctrl.themeChanged(selected)">
+            </div>
+        </div>
+    </div>
+    <h2 class="vsbb-m-b-med vsbb-m-t-med vsbb-m-l-small">Saved creations</h2>
+    <table ng-table="ctrl.tableParams" class="widefat fixed" cellspacing="0">
+        <thead>
+        <tr>
+            <th class="manage-column column-fn" scope="col">Friendly Name</th>
+            <th class="manage-column column-lm" scope="col">Last Modified</th>
+            <th class="manage-column column-sc" scope="col">ShortCode</th>
+        </tr>
+        </thead>
+
+        <tfoot>
+        <tr>
+            <th class="manage-column column-fn" scope="col">Friendly Name</th>
+            <th class="manage-column column-lm" scope="col">Last Modified</th>
+            <th class="manage-column column-sc" scope="col">ShortCode</th>
+        </tr>
+        </tfoot>
+
+        <tbody>
+        <tr ng-repeat="row in $data.data" class="alternate" valign="top">
+            <td class="column-columnname column-primary">
+                <strong>{{row.friendly_name ? row.friendly_name : row.save_name}}</strong>
+                <div class="row-actions visible">
+                    <span ng-if="!row.save_name" class="edit"><a
+                            href="#builder/{{row.theme}}/{{row.idx}}">Edit</a> |</span>
+                    <span class="delete"><a href="#" ng-click="ctrl.delete($event,row.idx)">Delete</a></span>
+                </div>
+            </td>
+            <th class="column" scope="row">{{row.last_modified ? row.last_modified : row.date_created}}</th>
+            <th ng-if="!row.save_name" class="column" scope="row"><input type="text" readonly="readonly" value="[VSBB id={{row.idx}}]"></th>
+            <th ng-if="row.save_name" class="column" scope="row"><input type="text" readonly="readonly" value="[virtual_slide_box id={{row.id}}]"></th>
+        </tr>
+        </tbody>
+    </table>
+</div>
