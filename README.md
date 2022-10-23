@@ -11,6 +11,7 @@ In questa repository sono presenti le slide e il codice utilizzati per presentar
 # Pre-requisiti
 
 + Installazione [docker](https://docs.docker.com/get-docker/)
++ Installazione [docker-compose](https://docs.docker.com/compose/install/linux/#install-the-plugin-manually)
 + Installazione [semgrep](https://semgrep.dev/docs/getting-started/)
 
 # Configurazione ambiente
