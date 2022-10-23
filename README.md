@@ -8,13 +8,13 @@
 
 In questa repository sono presenti le slide e il codice utilizzati per presentare la ricerca condotta insieme a [@dipa96](https://github.com/dipa96) in cui abbiamo implementato dei template personalizzati per Semgrep con lo scopo di individuare SQL Injection dall'analisi del codice sorgente dei plugin di Wordpress.
 
-# Pre-requisiti
+# Configurazione ambiente
+
+### Pre-requisiti
 
 + Installazione [docker](https://docs.docker.com/get-docker/)
 + Installazione [docker-compose](https://docs.docker.com/compose/install/linux/#install-the-plugin-manually)
 + Installazione [semgrep](https://semgrep.dev/docs/getting-started/)
-
-# Configurazione ambiente
 
 ### Download repository
 
