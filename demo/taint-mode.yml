@@ -1,0 +1,20 @@
+rules:
+- id: demo-taint-mode
+  message: "Callback: $CALLBACK"
+  languages: [php]
+  severity: ERROR
+  mode: taint
+
+  pattern-sources:
+    - patterns: 
+      - pattern-inside: |
+          function $CALLBACK(...){
+            ...
+          }
+      - pattern: $_GET['...']
+
+  pattern-sinks:
+    - pattern: $WPDB->get_row(...)
+
+  pattern-sanitizers:
+    - pattern: int(...)

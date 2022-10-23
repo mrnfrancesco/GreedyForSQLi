@@ -1,0 +1,14 @@
+rules:
+- id: demo-join-mode
+  message: "test"
+  languages: [php]
+  severity: ERROR
+  mode: join
+  join:
+    refs:
+      - rule: search_mode.yaml
+        as: search_add_action
+      - rule: taint_mode.yaml
+        as: sqli
+    on:  
+    - 'search_add_action.$CALLBACK == sqli.$CALLBACK'

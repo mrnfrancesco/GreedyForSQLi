@@ -1,0 +1,13 @@
+rules:
+- id: demo-search-mode
+  message: "$HOOK invoca $CALLBACK"
+  languages: [php]
+  severity: INFO
+  mode: search
+  patterns:
+  - pattern: add_action('$HOOK', '$CALLBACK');
+
+  - metavariable-regex:
+      metavariable: $HOOK
+      regex: ^wp_ajax_
+
