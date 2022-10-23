@@ -1,0 +1,5 @@
+plugins/*
+^plugins/index.php
+^plugins/mal-plugin.php
+^plugins/redacted/
+^plugins/wp-visual-slidebox-builder/
