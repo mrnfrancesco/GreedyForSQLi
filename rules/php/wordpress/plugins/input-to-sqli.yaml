@@ -1,0 +1,122 @@
+rules:
+  - id: input-to-sqli
+    message: |
+      Detected user input used to manually construct a SQL string in function "$SRCFUNC()".
+      This is usually bad practice because manual construction could accidentally result in a
+      SQL injection. An attacker could use a SQL injection to steal or modify contents of the database.
+      Instead, use `wpdb::prepare()` or other sanitizer functions on inputs.
+    severity: ERROR
+    languages: [php]
+    metadata:
+      authors:
+        - Francesco Marano (@mrnfrancesco)
+        - Donato Di Pasquale (@ddipa)
+      category: security
+      references:
+        - https://owasp.org/www-community/attacks/SQL_Injection
+        - https://portswigger.net/web-security/sql-injection
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+      owasp:
+        - "A3:2021 - Injection"
+        - "A1:2017 - Injection"
+      license: Commons Clause License Condition v1.0[LGPL-2.1-only]
+    mode: taint
+    pattern-sources:
+      - pattern-either:
+        # Match function parameters in case they came from user input in another function
+        - patterns:
+          - pattern-inside: |
+              function $SRCFUNC(..., $PARAM, ...) {
+                ...
+              }
+          - pattern: $PARAM
+
+        # Match direct use of user input
+        - patterns:
+          - pattern-inside: |
+              function $SRCFUNC(...) {
+                ...
+              }
+          - pattern-either:
+            # Superglobals
+            - pattern: $_GET[...]
+            - pattern: $_POST[...]
+            - pattern: $_REQUEST[...]
+            - pattern: $_COOKIE[...]
+            # Unusual way to access superglobals
+            - patterns:
+              - pattern: filter_input($TYPE, $VAR_NAME, ...)
+              - metavariable-pattern:
+                  metavariable: $TYPE
+                  pattern-either:
+                    - pattern: INPUT_GET
+                    - pattern: INPUT_POST
+                    - pattern: INPUT_COOKIE
+            # Alternative ways to get access to POST variables
+            - pattern: file_get_contents('php://input')
+            - pattern: stream_get_contents('php://input')
+            # WordPress way to parse user input from GET/POST
+            - patterns:
+              - pattern: wp_parse_args($INPUT, ...)
+              - metavariable-pattern:
+                  metavariable: $INPUT
+                  pattern-either:
+                    - pattern: $_GET
+                    - pattern: $_POST
+                    - pattern: $_REQUEST
+            # Headers coming from user HTTP request
+            - patterns:
+              - pattern: $_SERVER['$HEADER_NAME']
+              - metavariable-regex:
+                  metavariable: $HEADER_NAME
+                  regex: (^HTTP_)
+            - pattern: apache_request_headers()
+            - pattern: getallheaders()
+
+    pattern-sinks:
+      - patterns:
+        - pattern-either:
+          # WordPress database access via `wpdb` abstraction class
+          - pattern: $WPDB->query($QUERY)
+          - pattern: $WPDB->get_var($QUERY, ...)
+          - pattern: $WPDB->get_row($QUERY, ...)
+          - pattern: $WPDB->get_col($QUERY, ...)
+          - pattern: $WPDB->get_results($QUERY, ...)
+        # Since there is no assignment the symbolic propagation doesn't work
+        # and the sanitizers are not identified, hence this hack to remove false positives
+        - pattern-not: $WPDB->query($WPDB->prepare($QUERY, ...))
+        - pattern-not: $WPDB->get_var($WPDB->prepare($QUERY, ...), ...)
+        - pattern-not: $WPDB->get_row($WPDB->prepare($QUERY, ...), ...)
+        - pattern-not: $WPDB->get_col($WPDB->prepare($QUERY, ...), ...)
+        - pattern-not: $WPDB->get_results($WPDB->prepare($QUERY, ...), ...)
+
+    pattern-sanitizers:
+      - pattern-either:
+        # WordPress specific sanitizers
+        - pattern: $WPDB->prepare(...)
+        - pattern: sanitize_sql_orderby(...)
+        # MySQL specific sanitizers
+        - pattern: real_escape_string(...)
+        - pattern: mysql_real_escape_string(...)
+        - pattern: mysqli_real_escape_string(...)
+        - pattern: $MYSQLI->real_escape_string(...)
+        # Encoding functions
+        - pattern: base64_encode(...)
+        - pattern: strtotime(...)
+        # Cast to unexploitable types
+        - pattern: intval(...)
+        - pattern: int(...)
+        - pattern: absint(...)
+        - pattern: float(...)
+        - pattern: (int)(...)
+        - pattern: (float)(...)
+        - patterns:
+          - pattern: array_map('$SANITIZER', ...)
+          - metavariable-pattern:
+              metavariable: $SANITIZER
+              pattern-either:
+                - pattern: absint
+                - pattern: int
+                - pattern: intval
+                - pattern: float

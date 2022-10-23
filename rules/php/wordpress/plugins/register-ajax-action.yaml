@@ -1,0 +1,38 @@
+rules:
+  - id: register-ajax-action
+    message: |
+      Callback function "$CALLBACK()" is added to the AJAX action hook "$HOOK_NAME".
+      Particular attention should be paid to unauthenticated actions, since they can
+      be fired by any anonymous user. This can lead to potentially major vulnerabilities.
+    severity: INFO
+    languages: [php]
+    metadata:
+      authors:
+        - Francesco Marano (@mrnfrancesco)
+        - Donato Di Pasquale (@ddipa)
+      technology:
+        - wordpress
+      references:
+        - https://developer.wordpress.org/reference/functions/add_action/
+        - https://developer.wordpress.org/reference/files/wp-admin/admin-ajax.php/
+      license: Commons Clause License Condition v1.0[LGPL-2.1-only]
+    mode: search
+    patterns:
+      - pattern-either:
+        # add_action( string $hook_name, callable $callback, int $priority = 10, int $accepted_args = 1 )
+        - pattern: add_action('$HOOK_NAME', '$CALLBACK', ...);
+        - pattern: add_action('$HOOK_NAME', array('$CLASS', '$CALLBACK'), ...);
+        - pattern: add_action('$HOOK_NAME', array($OBJ, '$CALLBACK'), ...);
+        - pattern: add_action('$HOOK_NAME', ['$CLASS', '$CALLBACK'], ...);
+        - pattern: add_action('$HOOK_NAME', [$OBJ, '$CALLBACK'], ...);
+        # Match cases where namespace separator is used to access global namespace
+        - pattern: \add_action('$HOOK_NAME', '$CALLBACK', ...);
+        - pattern: \add_action('$HOOK_NAME', array('$CLASS', '$CALLBACK'), ...);
+        - pattern: \add_action('$HOOK_NAME', array($OBJ, '$CALLBACK'), ...);
+        - pattern: \add_action('$HOOK_NAME', ['$CLASS', '$CALLBACK'], ...);
+        - pattern: \add_action('$HOOK_NAME', [$OBJ, '$CALLBACK'], ...);
+        # Match frequent custom loader implementation
+        - pattern: $LOADER->add_action('$HOOK_NAME', $COMPONENT, '$CALLBACK', ...);
+      - metavariable-regex:
+          metavariable: $HOOK_NAME
+          regex: (^wp_ajax_(nopriv_)?)

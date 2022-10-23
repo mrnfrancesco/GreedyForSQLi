@@ -1,0 +1,31 @@
+rules:
+  - id: ajax-action-to-sqli
+    message: |
+      A callback function added as an AJAX action hook use a user input to manually contruct
+      a SQL string. This is usually bad practice because manual construction could accidentally result in a
+      SQL injection. An attacker could use a SQL injection to steal or modify contents of the database.
+      Instead, use `wpdb::prepare()` or other sanitizer functions on inputs.
+    severity: ERROR
+    metadata:
+      authors:
+        - Francesco Marano (@mrnfrancesco)
+        - Donato Di Pasquale (@ddipa)
+      category: security
+      references:
+        - https://owasp.org/www-community/attacks/SQL_Injection
+        - https://portswigger.net/web-security/sql-injection
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+      owasp:
+        - "A3:2021 - Injection"
+        - "A1:2017 - Injection"
+      license: Commons Clause License Condition v1.0[LGPL-2.1-only]
+    mode: join
+    join:
+      refs:
+        - rule: register-ajax-action.yaml
+          as: action
+        - rule: input-to-sqli.yaml
+          as: input
+      on:
+      - 'action.$CALLBACK == input.$SRCFUNC'
