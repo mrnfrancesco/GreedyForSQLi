@@ -22,7 +22,7 @@ In questa repository sono presenti le slide e il codice utilizzati per presentar
 $> git clone https://github.com/dipa96/GreedyForSQLi.git
 ```
 
-### Inizializzare instanza di wordpress locale su 10.10.10.2
+### Inizializzare istanza di wordpress locale su 10.10.10.2
 ```
 $> cd GreedyForSQLi
 
