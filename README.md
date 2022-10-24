@@ -26,9 +26,7 @@ $> git clone https://github.com/dipa96/GreedyForSQLi.git
 ```
 $> cd GreedyForSQLi
 
-$> docker-compose up -d
-
-# procedere con la normale installazione di WordPress
+$> docker-compose up -d # procedere con la normale installazione di WordPress su indirizzo http://10.10.10.2
 ```
 
 ### Lanciare Semgrep su plugin di esempio
