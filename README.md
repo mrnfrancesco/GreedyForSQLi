@@ -8,16 +8,16 @@
 
 # Greedy for SQL Injeciton
 
-In this repository are the slides and code used to present the research conducted together with [@dipa96](https://github.com/dipa96) in which we implemented custom templates for Semgrep with the purpose of detecting SQL Injection from the analysis of Wordpress plugin source code.
+Slides and code used to present the research conducted together with [@dipa96](https://github.com/dipa96) in which we implemented custom templates for Semgrep with the purpose of detecting SQL Injection from the analysis of Wordpress plugin source code.
 
 ## Table of contents
 
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Installing](#installing)
-+ [Usage](#usage)
-+ [Achievements](#achievements)
-+ [Contributing](#contributing)
+- [Usage](#usage)
+- [Achievements](#achievements)
+- [Contributing](#contributing)
 ## About
 
 This project was presented at the [ComeToCode2022](https://www.cometocode.it/) conference.
