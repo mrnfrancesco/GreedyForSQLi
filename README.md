@@ -31,7 +31,8 @@ Watch our presentation at:
 + [git](https://git-scm.com/). 
 + [docker](https://docs.docker.com/get-docker/)
 + [docker-compose](https://docs.docker.com/compose/install/linux/)
-+ [semgrep](https://semgrep.dev/docs/getting-started/)
++ [semgrep](https://semgrep.dev/docs/getting-started/)  
+
 Make sure each requirement is **installed correctly** before proceeding.
 
 ## Installing
