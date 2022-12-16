@@ -6,7 +6,7 @@
 
 ![copertina](https://user-images.githubusercontent.com/8071136/197403921-375eb097-3b00-4ca0-87fa-0024aff99dec.png)
 
-# Greedy for SQL Injeciton
+# Greedy for SQL Injection
 
 Slides and code used to present the research conducted together with [@dipa96](https://github.com/dipa96) in which we implemented custom templates for Semgrep with the purpose of detecting SQL Injection from the analysis of Wordpress plugin source code.
 
