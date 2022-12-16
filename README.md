@@ -23,7 +23,7 @@ Slides and code used to present the research conducted together with [@dipa96](h
 This project was presented at the [ComeToCode2022](https://www.cometocode.it/) conference.
 The project was born out of a desire to explore the world of code review and the [SemGrep](https://semgrep.dev/) tool.
 
-Watch our presentation at: 
+Watch our presentation at: [Slides_ENG](slides/GreedyForSQLi_slides_ENG.pdf)
 
 ## Getting Started
 
