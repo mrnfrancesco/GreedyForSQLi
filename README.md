@@ -28,7 +28,7 @@ Watch our presentation at:
 ## Getting Started
 
 **Project requires:**
-+ [git](https://git-scm.com/). 
++ [git](https://git-scm.com/)
 + [docker](https://docs.docker.com/get-docker/)
 + [docker-compose](https://docs.docker.com/compose/install/linux/)
 + [semgrep](https://semgrep.dev/docs/getting-started/)  
