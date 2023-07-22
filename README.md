@@ -62,8 +62,8 @@ semgrep -c ajax-action-to-sqli.yaml -c ajax-action-to-sqli-deep.yaml ../../../..
 ## Achievements
 We started reporting vulnerabilities to [WPScan](https://wpscan.com/).  Currently these are the updated CVEs.
 
-+ CVE-2022-3241 | [Build App Online < 1.0.19 - Unauthenticated SQL Injection](https://wpscan.com/vulnerability/a995dd67-43fc-4087-a7f1-5db57f4c828c)
-+ CVE-2022-3860 | [Visual Email Designer for WooCommerce < 1.7.2 - Multiple Author+ SQLi](https://wpscan.com/vulnerability/d99ce21f-fbb6-429c-aa3b-19c4a5eb7557)
++ CVE-2022-3241 | [Build App Online < 1.0.19 - Unauthenticated SQL Injection](https://www.unlock-security.it/it/security-advisory/cve-2022-3241-build-app-online/)
++ CVE-2022-3860 | [Visual Email Designer for WooCommerce < 1.7.2 - Multiple Author+ SQLi](https://www.unlock-security.it/it/security-advisory/cve-2022-3860-visual-email-designer-for-woocommerce/)
 
 ## Contributing
 
